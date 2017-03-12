@@ -4,10 +4,10 @@ import './SearchInput.css';
 function SearchInput(props) {
   return (
     <input
-      type="text"
+      type="search"
       className="search-input"
       placeholder="Search Publishers"
-      onKeyUp={props.searchKey}
+      onChange={props.searchKey}
     />
   );
 }
