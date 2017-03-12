@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Footer from '../../src/Components/Footer';
+import Footer from './Footer';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {

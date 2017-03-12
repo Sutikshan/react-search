@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchInput from '../../src/Components/SearchInput';
+import SearchInput from './SearchInput';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {

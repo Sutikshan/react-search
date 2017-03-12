@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchContainer from '../../src/Components/SearchContainer';
+import SearchContainer from './SearchContainer';
 import { mount } from 'enzyme';
 
 const sitesCache = [{
