@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from '../src/App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  const data = { company: {} };
+  const data = { company: { links: {} } };
   ReactDOM.render(<App data={data} />, div);
 });

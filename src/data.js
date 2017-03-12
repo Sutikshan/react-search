@@ -50,7 +50,7 @@ data.company = {
   name: 'Adslot',
   logo: 'logo.png',
   links: {
-    '&copy;2012 Adslot': 'https://www.adslot.com/',
+    '\u00A9 2012 Adslot': 'https://www.adslot.com/',
     'Adslot Publisher': 'http://www.adslot.com/directsales/',
     'Adslot Create': 'https://create.adslot.com/',
     Terms: 'https://media.adslot.com/terms',

@@ -17,5 +17,6 @@
     "mountWithIntl": true,
     "shallowWithIntl": true,
     "document": true,
+    "expect": true
   }
 }
