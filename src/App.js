@@ -11,7 +11,7 @@ function App(props) {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div className="App-main">
-        <SearchContainer sites={props.data.sites} categories={props.data.categories} />
+        <SearchContainer sitesCache={props.data.sitesCache} />
       </div>
       <Footer company={props.data.company} />
     </div>

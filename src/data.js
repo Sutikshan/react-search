@@ -58,5 +58,19 @@ data.company = {
     'Payment Policy': 'https://publisher.adslot.com/payment-terms',
   },
 };
+data.init = () => {
+  data.sitesCache = data.sites.map(s => {
+    const siteObj = {
+      id: s.id,
+      siteUrl: s.siteUrl,
+      description: s.description,
+      keys: [s.siteName.toLowerCase()],
+    };
+    siteObj.keys = siteObj.keys.concat(s.categoryIds.map(catId =>
+      data.categories.find(c => c.id === catId).description.toLowerCase()));
+
+    return siteObj;
+  });
+};
 
 export default data;

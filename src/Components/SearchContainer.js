@@ -1,5 +1,5 @@
 import React from 'react';
-import { debounce } from 'lodash';
+import debounce from 'lodash.debounce';
 import './SearchContainer.css';
 import SearchResult from './SearchResult';
 import SearchInput from './SearchInput';
@@ -11,20 +11,8 @@ class SearchContainer extends React.Component {
     this.state = { results: [] };
     this.getSearchKey = this.getSearchKey.bind(this);
     this.onKeyPress = this.onKeyPress.bind(this);
-
-    this.siteCache = this.props.sites.map(s => {
-      const siteObj = {
-        id: s.id,
-        siteUrl: s.siteUrl,
-        description: s.description,
-        keys: [s.siteName.toLowerCase()],
-      };
-      siteObj.keys = siteObj.keys.concat(s.categoryIds.map(catId =>
-        this.props.categories.find(c => c.id === catId).description.toLowerCase()));
-
-      return siteObj;
-    });
   }
+
   componentWillMount() {
     this.delayedSearch = debounce(e => this.getSearchKey(e), 250);
   }
@@ -40,7 +28,7 @@ class SearchContainer extends React.Component {
     const tags = inputs.split(',').map(t => t.trim().toLowerCase());
 
     for (const tag of tags) {
-      for (const site of this.siteCache) {
+      for (const site of this.props.sitesCache) {
         if (site.keys.includes(tag)) results.push(site);
       }
     }
@@ -60,8 +48,7 @@ class SearchContainer extends React.Component {
 }
 
 SearchContainer.propTypes = {
-  sites: React.PropTypes.array.isRequired,
-  categories: React.PropTypes.array.isRequired,
+  sitesCache: React.PropTypes.array.isRequired,
 };
 
 export default SearchContainer;
