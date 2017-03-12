@@ -11,6 +11,9 @@ body {
 /* Grid */
 .container {
   max-width:970px;
+  margin: auto;
+  display: block;
+  padding: 18px 75px 18px 25px;
 }
 
 .App-header {

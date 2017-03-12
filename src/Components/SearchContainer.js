@@ -41,7 +41,7 @@ class SearchContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <SearchInput searchKey={this.onKeyPress} />
         <SearchResult results={this.state.results} />
       </div>);

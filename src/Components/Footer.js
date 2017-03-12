@@ -7,7 +7,7 @@ function Footer(props) {
 
   return (
     <footer className="App-footer">
-      <div className="container">
+      <div>
         <a href="https://www.adslot.com/">
           <img src={logo} className="App-footer-logo" alt="logo" />
         </a>
