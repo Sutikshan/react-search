@@ -14,7 +14,8 @@ class SearchContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.delayedSearch = debounce(e => this.getSearchKey(e), 250);
+    this.delayedSearch = debounce(e => this.getSearchKey(e), this.props.debounceDelay,
+    { leading: true });
   }
 
   onKeyPress(e) {
@@ -49,6 +50,11 @@ class SearchContainer extends React.Component {
 
 SearchContainer.propTypes = {
   sitesCache: React.PropTypes.array.isRequired,
+  debounceDelay: React.PropTypes.number,
+};
+
+SearchContainer.defaultProps = {
+  debounceDelay: 250,
 };
 
 export default SearchContainer;
