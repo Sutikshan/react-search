@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Footer from './Components/Footer';
+import SearchContainer from './Components/SearchContainer';
 
 function App(props) {
   return (
@@ -10,6 +11,7 @@ function App(props) {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div className="App-main">
+        <SearchContainer sites={props.data.sites} categories={props.data.categories} />
       </div>
       <Footer company={props.data.company} />
     </div>

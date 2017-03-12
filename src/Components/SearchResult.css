@@ -1,0 +1,15 @@
+.result-row {
+  transition:all 200ms ease;
+  margin-bottom:35px;
+}
+
+.result-row-a {
+  text-decoration: underline;
+  color:#006dcc;
+  font-size:18px;
+}
+
+.result-row-p {
+  color:#6d6f70;
+  font-size:14px;
+}

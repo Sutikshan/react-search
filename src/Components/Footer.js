@@ -14,7 +14,7 @@ function Footer(props) {
         <hr />
         <nav className="footer-nav">
           {Object.keys(links).map((key) =>
-            (<a className="footer-nav-a" href={links[key]}>{key}</a>))}
+            (<a key={key} className="footer-nav-a" href={links[key]}>{key}</a>))}
         </nav>
       </div>
     </footer>
