@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 it('renders without crashing', () => {
   const fn = jest.fn();
 
-  const wrapper = shallow(<SearchInput searchKey={fn} />);
-  wrapper.find('input').simulate('keyup');
+  const wrapper = shallow(<SearchInput searchKey={fn} query={''} />);
+  wrapper.find('input').simulate('change');
   expect(fn).toHaveBeenCalled();
 });

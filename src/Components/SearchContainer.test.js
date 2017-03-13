@@ -32,7 +32,7 @@ it('renders without crashing', () => {
 it('searches on siteName and category both', () => {
   const wrapper = mount(<SearchContainer sitesCache={sitesCache} debounceDelay={0} />);
 
-  wrapper.find('input').simulate('keyUp', { target: { value: 'Surfermag' } });
+  wrapper.find('input').simulate('change', { target: { value: 'Surfermag' } });
 
   expect(wrapper.find('.result-row-a').length).toEqual(2);
 
@@ -43,7 +43,7 @@ it('searches on siteName and category both', () => {
 it('searches on multiple tag separated by ,', () => {
   const wrapper = mount(<SearchContainer sitesCache={sitesCache} debounceDelay={0} />);
 
-  wrapper.find('input').simulate('keyUp', { target: { value: 'Cats,Dogs' } });
+  wrapper.find('input').simulate('change', { target: { value: 'Cats,Dogs' } });
 
   expect(wrapper.find('.result-row-a').length).toEqual(2);
 
@@ -55,7 +55,7 @@ it('searches on multiple tag separated by ,', () => {
 it('searches one siteName match', () => {
   const wrapper = mount(<SearchContainer sitesCache={sitesCache} debounceDelay={0} />);
 
-  wrapper.find('input').simulate('keyUp', { target: { value: 'Cats' } });
+  wrapper.find('input').simulate('change', { target: { value: 'Cats' } });
 
   expect(wrapper.find('.result-row-a').length).toEqual(1);
 
