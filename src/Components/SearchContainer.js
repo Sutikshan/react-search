@@ -8,9 +8,9 @@ import SearchInput from './SearchInput';
 class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { results: [] };
+    this.state = { results: [], query: '' };
     this.getSearchKey = this.getSearchKey.bind(this);
-    this.onKeyPress = this.onKeyPress.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   componentWillMount() {
@@ -18,13 +18,12 @@ class SearchContainer extends React.Component {
     { leading: true });
   }
 
-  onKeyPress(e) {
-    e.persist();
-    this.delayedSearch(e);
+  onChange(e) {
+    this.setState({ query: e.target.value });
+    this.delayedSearch(e.target.value);
   }
 
-  getSearchKey(e) {
-    const inputs = e.target.value;
+  getSearchKey(inputs) {
     const results = [];
     const tags = inputs.split(',').map(t => t.trim().toLowerCase());
 
@@ -42,7 +41,7 @@ class SearchContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <SearchInput searchKey={this.onKeyPress} />
+        <SearchInput searchKey={this.onChange} query={this.state.query} />
         <SearchResult results={this.state.results} />
       </div>);
   }
